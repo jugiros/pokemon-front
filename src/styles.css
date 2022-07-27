@@ -145,6 +145,7 @@
   font-size: 35px;
   line-height: 52px;
   color: #FFFFFF;
+  padding-top: 30px;
 }
 
 .card-data-main {
@@ -163,6 +164,20 @@
   font-size: 24px;
   line-height: 36px;
   color: #FFFFFF;
+}
+
+.row-view-data {
+  margin-top: 30px !important;
+}
+
+.col-main-card {
+  margin-left: 30px;
+  text-align: left;
+}
+
+.col-text-card {
+  margin-right: 30px;
+  text-align: right;
 }
 
 .div-card-loading {

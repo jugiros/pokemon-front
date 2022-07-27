@@ -1,24 +1,24 @@
 <div class="card-user-image">
   <p class="card-data-name">{{user.name ? user.name.toUpperCase() : ''}}</p>
   <img src="{{user.imgUser ? user.imgUser : globals.imgUserB64}}" class="img-card-image">
-  <div class="row">
+  <div class="row row-view-data">
     <div class="col-md-5">
-      <p class="card-data-main">Pasatiempo:</p>
+      <p class="card-data-main col-main-card">Pasatiempo:</p>
     </div>
     <div class="col-md-7">
-      <p class="card-data-text">{{user.hobby ? user.hobby.toUpperCase() : ''}}</p>
+      <p class="card-data-text col-text-card">{{user.hobby ? user.hobby.toUpperCase() : ''}}</p>
     </div>
     <div class="col-md-5">
-      <p class="card-data-main">Edad:</p>
+      <p class="card-data-main col-main-card">Edad:</p>
     </div>
     <div class="col-md-7">
-      <p class="card-data-text">{{user.age ? user.age : ''}}</p>
+      <p class="card-data-text col-text-card">{{user.age ? user.age.toString() : '0'}}</p>
     </div>
     <div *ngIf="user.age ? user.age >= 18 : false" class="col-md-5">
-      <p class="card-data-main">DUI:</p>
+      <p class="card-data-main col-main-card">DUI:</p>
     </div>
     <div *ngIf="user.age ? user.age >= 18 : false" class="col-md-7">
-      <p class="card-data-text">{{user.document ? user.document.toUpperCase() : ''}}</p>
+      <p class="card-data-text col-text-card">{{user.document ? user.document.toUpperCase() : ''}}</p>
     </div>
   </div>
 </div>
