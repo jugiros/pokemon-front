@@ -1,0 +1,31 @@
+<div class="card-user-image">
+  <div class="row">
+    <div class="col-md-6">
+      <p class="txt-coach">Entrenador</p>
+    </div>
+    <div class="col-md-6" style="margin-top: 50px;">
+      <img class="img-view-pokemon" src="assets/img/member.png">
+    </div>
+  </div>
+  <img src="{{user.imgUser ? user.imgUser : globals.imgUserB64}}" class="img-card-image">
+  <div class="row row-view-data">
+    <div class="col-md-5">
+      <p class="card-data-main col-main-card">Pasatiempo:</p>
+    </div>
+    <div class="col-md-7">
+      <p class="card-data-text col-text-card">{{user.hobby ? user.hobby.toUpperCase() : ''}}</p>
+    </div>
+    <div class="col-md-5">
+      <p class="card-data-main col-main-card">Edad:</p>
+    </div>
+    <div class="col-md-7">
+      <p class="card-data-text col-text-card">{{user.age ? user.age.toString() : '0'}}</p>
+    </div>
+    <div *ngIf="user.age ? user.age >= 18 : false" class="col-md-5">
+      <p class="card-data-main col-main-card">DUI:</p>
+    </div>
+    <div *ngIf="user.age ? user.age >= 18 : false" class="col-md-7">
+      <p class="card-data-text col-text-card">{{user.document ? user.document.toUpperCase() : ''}}</p>
+    </div>
+  </div>
+</div>
