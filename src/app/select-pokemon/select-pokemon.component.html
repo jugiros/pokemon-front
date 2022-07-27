@@ -1,0 +1,15 @@
+<app-loading-card *ngIf="viewLoading"></app-loading-card>
+<div class="add-profile-container" *ngIf="!viewLoading">
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <img src="assets/img/arrow.png" style="display: inline; cursor: pointer;" (click)="returnInit()">
+      <p class="add-profile-title input-card-image-2" style="display: inline; border: none;">¡Ya casi términamos!</p>
+      <p class="add-profile-text">Revisa la información, y completa lo solicitado.</p>
+    </div>
+  </div>
+  <div class="row row-card-image">
+    <div class="col-md-6 d-flex justify-content-center">
+      <app-card-data></app-card-data>
+    </div>
+  </div>
+</div>

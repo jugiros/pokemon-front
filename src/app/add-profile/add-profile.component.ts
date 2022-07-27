@@ -75,6 +75,7 @@ export class AddProfileComponent implements OnInit {
         if (valid) {
           this.toast.success('Proceso realizado de manera correcta.', 'Correcto');
           this.functions.setLocalStorageData('user', this.user);
+          this.router.navigate(['/select-pokemon']);
         } else {
           this.toast.error('El número de identificación es incorrecto.', 'Error');
         }
