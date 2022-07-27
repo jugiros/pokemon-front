@@ -96,6 +96,8 @@ export class SelectPokemonComponent implements OnInit {
     }
     this.functions.setLocalStorageData('pokemons', this.lstPokemonsSelected);
     this.toast.success('Proceso realizado de manera correcta.', 'Correcto');
+    this.router.navigate(['/my-pokemon']);
+    this.functions.setLocalStorageData('editPokemon', false);
   }
 
   ngOnInit(): void {
@@ -103,6 +105,19 @@ export class SelectPokemonComponent implements OnInit {
       const ulr = WS["lst-pokemon"];
       this.getLstPokemons(ulr);
     }, 1000)
+    this.functions.getLocalStorageData('pokemons').then((res: any) => {
+      if (res) {
+        const arrPokemons = JSON.parse(res);
+        if (arrPokemons.length > 0) {
+          this.functions.getLocalStorageData('editPokemon').then((res: any) => {
+            const valid = JSON.parse(res);
+            if (!valid) {
+              this.router.navigate(['/my-pokemon']);
+            }
+          })
+        }
+      }
+    });
   }
 
 }

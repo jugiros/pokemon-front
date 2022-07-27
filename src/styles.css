@@ -249,3 +249,64 @@
   text-align: center;
   margin-top: 44px !important;
 }
+
+.view-pokemon-user-name {
+  font-family: revert;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 60px;
+  color: #000000;
+}
+
+.txt-coach {
+  font-family: revert;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  margin-top: 50px;
+  text-align: left;
+  color: white;
+  margin-left: 30px;
+}
+
+.img-view-pokemon {
+  text-align: right;
+  width: 60px;
+  height: 60px;
+}
+
+.edit-user {
+  width: 134px;
+  height: 30px;
+  left: 391px;
+  top: 167px;
+  border: 1px solid #01426A;
+  border-radius: 10px;
+  background: white;
+  color: #01426A;
+  font-family: revert;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 22px;
+  margin-left: 30px;
+}
+
+.edit-pokemon {
+  width: 134px;
+  height: 30px;
+  left: 391px;
+  top: 167px;
+  border: 1px solid #01426A;
+  border-radius: 10px;
+  background: white;
+  color: #01426A;
+  font-family: revert;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 22px;
+  margin-left: 200px;
+}

@@ -1,0 +1,24 @@
+<app-loading-card *ngIf="viewLoading" xmlns="http://www.w3.org/1999/html"></app-loading-card>
+<div class="add-profile-container" *ngIf="!viewLoading">
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <p class="view-pokemon-user-name" style="display: inline;">¡Hola {{user.name ? user.name.split(' ')[0] : ''}}!</p>
+      <button style="display: inline;" type="button" class="edit-user" (click)="editUser()">Editar Perfil</button>
+    </div>
+  </div>
+  <div class="row row-card-image">
+    <div class="col-md-6 d-flex justify-content-center">
+      <app-card-data-pokemon></app-card-data-pokemon>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center">
+      <div class="card-user-image-select">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p class="text-card-title" style="display: inline;">Mis Pokémon</p>
+            <button style="display: inline;" type="button" class="edit-pokemon" (click)="editPokemons()">Editar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,6 +14,8 @@ import { NgxMaskModule } from 'ngx-mask';
 import { SelectPokemonComponent } from './select-pokemon/select-pokemon.component';
 import { CardDataComponent } from './components/card-data/card-data.component';
 import { LoadingCardComponent } from './components/loading-card/loading-card.component';
+import { MyPokemonsComponent } from './my-pokemons/my-pokemons.component';
+import { CardDataPokemonComponent } from './components/card-data-pokemon/card-data-pokemon.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { LoadingCardComponent } from './components/loading-card/loading-card.com
     AddProfileComponent,
     SelectPokemonComponent,
     CardDataComponent,
-    LoadingCardComponent
+    LoadingCardComponent,
+    MyPokemonsComponent,
+    CardDataPokemonComponent
   ],
   imports: [
     BrowserModule,

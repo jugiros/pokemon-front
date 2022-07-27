@@ -76,6 +76,7 @@ export class AddProfileComponent implements OnInit {
           this.toast.success('Proceso realizado de manera correcta.', 'Correcto');
           this.functions.setLocalStorageData('user', this.user);
           this.router.navigate(['/select-pokemon']);
+          this.functions.setLocalStorageData('editUser', false);
         } else {
           this.toast.error('El número de identificación es incorrecto.', 'Error');
         }
@@ -90,6 +91,7 @@ export class AddProfileComponent implements OnInit {
       this.toast.success('Proceso realizado de manera correcta.', 'Correcto');
       this.functions.setLocalStorageData('user', this.user);
       this.router.navigate(['/select-pokemon']);
+      this.functions.setLocalStorageData('editUser', false);
     }
   }
 
@@ -108,7 +110,12 @@ export class AddProfileComponent implements OnInit {
         } else {
           this.viewDocument = false;
         }
-        this.router.navigate(['/select-pokemon']);
+        this.functions.getLocalStorageData('editUser').then((res: any) => {
+          const valid = JSON.parse(res);
+          if (!valid) {
+            this.router.navigate(['/select-pokemon']);
+          }
+        })
       }
     });
   }
