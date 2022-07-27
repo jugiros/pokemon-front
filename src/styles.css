@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+.first-div-header {
+  height: 75px;
+  background: rgb(9,79,121);
+  background: linear-gradient(180deg, rgba(9,79,121,0) 0%, rgba(146,174,217,0.15730042016806722) 100%, rgba(2,0,36,0) 100%);
+}
+
+.second-div-header {
+  height: 90%;
+  background: white;
+}
+
+.img-header {
+  position: absolute;
+  width: 138px;
+  height: 51px;
+  left: 41px;
+  top: 12px;
+}
