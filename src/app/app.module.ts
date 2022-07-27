@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMaskModule } from 'ngx-mask';
 import { SelectPokemonComponent } from './select-pokemon/select-pokemon.component';
 import { CardDataComponent } from './components/card-data/card-data.component';
+import { LoadingCardComponent } from './components/loading-card/loading-card.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CardDataComponent } from './components/card-data/card-data.component';
     HeaderBarComponent,
     AddProfileComponent,
     SelectPokemonComponent,
-    CardDataComponent
+    CardDataComponent,
+    LoadingCardComponent
   ],
   imports: [
     BrowserModule,

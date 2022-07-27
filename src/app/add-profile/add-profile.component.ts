@@ -3,7 +3,8 @@ import { User } from "../models/user";
 import { Globals } from "../../globals"
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
-import { FunctionServicesService } from '../../services/function-services.service'
+import { FunctionServicesService } from '../../services/function-services.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-profile',
@@ -22,7 +23,8 @@ export class AddProfileComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private toast: ToastrService,
-    private functions: FunctionServicesService
+    private functions: FunctionServicesService,
+    private router: Router
   ) {
     this.user = new User();
     this.globals = Globals;
@@ -86,6 +88,7 @@ export class AddProfileComponent implements OnInit {
       }
       this.toast.success('Proceso realizado de manera correcta.', 'Correcto');
       this.functions.setLocalStorageData('user', this.user);
+      this.router.navigate(['/select-pokemon']);
     }
   }
 
@@ -104,6 +107,7 @@ export class AddProfileComponent implements OnInit {
         } else {
           this.viewDocument = false;
         }
+        this.router.navigate(['/select-pokemon']);
       }
     });
   }

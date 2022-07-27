@@ -164,3 +164,17 @@
   line-height: 36px;
   color: #FFFFFF;
 }
+
+.div-card-loading {
+  text-align: center;
+  margin-top: 8%;
+}
+
+.text-card-loading {
+  font-family: revert;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 52px;
+  color: #185A7D;
+}
