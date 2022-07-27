@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Globals } from '../globals';
 
 @Injectable({
   providedIn: 'root'
@@ -65,10 +66,10 @@ export class FunctionServicesService {
   }
 
   getAge (dateString: string) {
-    var today = new Date();
-    var birthDate = new Date(dateString);
-    var age = today.getFullYear() - birthDate.getFullYear();
-    var m = today.getMonth() - birthDate.getMonth();
+    let today = new Date();
+    const birthDate = new Date(dateString);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
       age--;
     }
@@ -80,11 +81,26 @@ export class FunctionServicesService {
   }
 
   getLocalStorageData (item: string) {
-    return localStorage.getItem(item);
+    return new Promise(resolve => {
+      resolve(localStorage.getItem(item));
+    });
   }
 
   clearLocalStorageData () {
     window.localStorage.clear();
+  }
+
+  getBase64 (file:any) {
+    return new Promise(resolve => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = function () {
+        resolve(reader.result);
+      };
+      reader.onerror = function (error) {
+        resolve(Globals.imgUserB64);
+      };
+    });
   }
 
 }

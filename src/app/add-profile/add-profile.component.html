@@ -1,7 +1,8 @@
 <div class="add-profile-container">
   <div class="row">
     <div class="col-md-6 text-center">
-      <p class="add-profile-title">¡Hola! Configuremos tu perfil</p>
+      <img src="assets/img/arrow.png" style="display: inline;">
+      <p class="add-profile-title input-card-image-2" style="display: inline; border: none;">¡Hola! Configuremos tu perfil</p>
       <p class="add-profile-text">Queremos conocerte mejor.</p>
     </div>
   </div>
@@ -9,22 +10,37 @@
     <div class="col-md-6 d-flex justify-content-center">
       <div class="card-user-image">
         <p class="text-card-image">Imágen perfil</p>
-        <img class="img-card-image">
-        <input class="input-card-image"  type="file" placeholder="Adjunta un foto">
+        <img src="{{user.imgUser ? user.imgUser : globals.imgUserB64}}" class="img-card-image">
+        <input *ngIf="!imgLoad" class="input-card-image" type="file" placeholder="Adjunta un foto" accept="image/*"
+        (change)="changueFile($event)">
+        <div *ngIf="imgLoad" class="div-input-button">
+          <input class="input-card-image-2" [(ngModel)]="user.imgName" [ngModelOptions]="{standalone: true}">
+          <button class="button-add-input" (click)="deleteImg()"></button>
+        </div>
       </div>
     </div>
     <div class="col-md-6 d-flex justify-content-center">
       <div class="card-user-image-2">
         <p class="text-card-title">Tu información</p>
         <p class="add-profile-text">Completa la siguiente información para completar tu perfil</p>
-        <form>
+        <form [formGroup]="formAddProfile" novalidate>
           <div class="form-group">
-            <input class="input-card-data" type="text" placeholder="Nombre*">
-            <input class="input-card-data" type="text" placeholder="Pasatiempo favorito">
-            <input class="input-card-data" type="date" placeholder="Cumpleaños*">
-            <input class="input-card-data" type="text" placeholder="Documento*">
+            <input class="input-card-data form-control" type="text" placeholder="Nombre*"
+                   formControlName="name" [ngClass]="{ 'is-invalid': submitedUserItem && fu['name'].errors }"
+                   [(ngModel)]="user.name">
+            <input class="input-card-data form-control" type="text" placeholder="Pasatiempo favorito"
+                   [(ngModel)]="user.hobby" [ngModelOptions]="{standalone: true}">
+            <input class="input-card-data form-control" type="date" placeholder="Cumpleaños*"
+                   formControlName="birt" [ngClass]="{ 'is-invalid': submitedUserItem && fu['birt'].errors }"
+                   type="text" onfocus="(this.type='date')" onblur="(this.type='text')"
+                   [(ngModel)]="user.birthday" (change)="changueDate()">
+            <input *ngIf="viewDocument" class="input-card-data form-control" type="text" placeholder="Documento*"
+                   formControlName="docu" [ngClass]="{ 'is-invalid': submitedUserItem && fu['docu'].errors }"
+                   mask="000000000-0" [(ngModel)]="user.document">
+            <input *ngIf="!viewDocument" class="input-card-data form-control" type="text" placeholder="Carnet de Minoridad"
+                   [(ngModel)]="user.document" [ngModelOptions]="{standalone: true}">
             <div class="div-btn-card-data">
-              <button type="button" class="btn btn-primary">Continuar</button>
+              <button type="button" class="btn btn-primary" (click)="continue()">Continuar</button>
             </div>
           </div>
         </form>
