@@ -17,6 +17,7 @@ export class SelectPokemonComponent implements OnInit {
   public lstPokemonsFilter: any[];
   public lstPokemonsSelected: any[];
   public txtSearch: string;
+  public nextUrl: string;
 
   constructor(
     private functions: FunctionServicesService,
@@ -29,6 +30,7 @@ export class SelectPokemonComponent implements OnInit {
     this.lstPokemonsFilter = [];
     this.lstPokemonsSelected = [];
     this.txtSearch = '';
+    this.nextUrl = '';
   }
 
   filterLstPokemon() {
@@ -46,7 +48,8 @@ export class SelectPokemonComponent implements OnInit {
   getLstPokemons(url: string) {
     this.rest.httpGet(url).then((res: any) => {
       if (res) {
-        this.lstPokemons = res['results'];
+        this.lstPokemons = this.lstPokemons.concat(res['results']);
+        this.nextUrl = res['next'];
         let cont = 0;
         this.lstPokemons.forEach(async pokemon => {
           await this.rest.httpGet(pokemon.url).then((res: any) => {
@@ -98,6 +101,12 @@ export class SelectPokemonComponent implements OnInit {
     this.toast.success('Proceso realizado de manera correcta.', 'Correcto');
     this.router.navigate(['/my-pokemon']);
     this.functions.setLocalStorageData('editPokemon', false);
+  }
+
+  onScroll(event: any) {
+    if (event.target.offsetHeight + event.target.scrollTop >= event.target.scrollHeight) {
+      this.getLstPokemons(this.nextUrl);
+    }
   }
 
   ngOnInit(): void {

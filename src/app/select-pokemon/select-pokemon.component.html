@@ -17,7 +17,7 @@
         <p class="add-profile-text">Selecciona 3 Pokémon para que sean parte de tu equipo</p>
         <input [(ngModel)]="txtSearch" [ngModelOptions]="{standalone: true}" class="form-control input-search"
                placeholder="Buscar por índice, nombre..." (keyup)="filterLstPokemon()">
-        <div class="row row-view-pokemons">
+        <div class="row row-view-pokemons" id="divScrollPokemons" (scroll)="onScroll($event)">
           <div class="col-md-4" *ngFor="let pokemon of lstPokemonsFilter; let i = index">
             <div (click)="addPokemon(pokemon)" class="{{lstPokemonsSelected.includes(pokemon) ? 'div-select-pokemon-select' : 'div-select-pokemon'}}">
               <img class="img-videw-pokemon" src="{{pokemon['imgPokemon']}}">
