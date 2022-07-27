@@ -11,12 +11,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMaskModule } from 'ngx-mask';
+import { SelectPokemonComponent } from './select-pokemon/select-pokemon.component';
+import { CardDataComponent } from './components/card-data/card-data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderBarComponent,
-    AddProfileComponent
+    AddProfileComponent,
+    SelectPokemonComponent,
+    CardDataComponent
   ],
   imports: [
     BrowserModule,

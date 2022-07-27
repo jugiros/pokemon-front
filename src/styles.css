@@ -137,3 +137,30 @@
   width: 30px;
   height: 20px;
 }
+
+.card-data-name {
+  font-family: revert;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 52px;
+  color: #FFFFFF;
+}
+
+.card-data-main {
+  font-family: revert;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  color: #FFFFFF;
+}
+
+.card-data-text {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: #FFFFFF;
+}

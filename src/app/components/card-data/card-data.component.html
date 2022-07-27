@@ -1,0 +1,24 @@
+<div class="card-user-image">
+  <p class="card-data-name">{{user.name ? user.name.toUpperCase() : ''}}</p>
+  <img src="{{user.imgUser ? user.imgUser : globals.imgUserB64}}" class="img-card-image">
+  <div class="row">
+    <div class="col-md-5">
+      <p class="card-data-main">Pasatiempo:</p>
+    </div>
+    <div class="col-md-7">
+      <p class="card-data-text">{{user.hobby ? user.hobby.toUpperCase() : ''}}</p>
+    </div>
+    <div class="col-md-5">
+      <p class="card-data-main">Edad:</p>
+    </div>
+    <div class="col-md-7">
+      <p class="card-data-text">{{user.age ? user.age : ''}}</p>
+    </div>
+    <div *ngIf="user.age ? user.age >= 18 : false" class="col-md-5">
+      <p class="card-data-main">DUI:</p>
+    </div>
+    <div *ngIf="user.age ? user.age >= 18 : false" class="col-md-7">
+      <p class="card-data-text">{{user.document ? user.document.toUpperCase() : ''}}</p>
+    </div>
+  </div>
+</div>

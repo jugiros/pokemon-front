@@ -95,7 +95,10 @@ export class AddProfileComponent implements OnInit {
       if (res) {
         this.user = JSON.parse(res);
         this.imgLoad = true;
-        const edad = this.user.age ? this.user.age : 18;
+        let edad = this.user.age ? this.user.age : 18;
+        if (this.user.age == 0) {
+          edad = 0;
+        }
         if (edad >= 18) {
           this.viewDocument = true;
         } else {
