@@ -11,11 +11,51 @@
       <app-card-data-pokemon></app-card-data-pokemon>
     </div>
     <div class="col-md-6 d-flex justify-content-center">
-      <div class="card-user-image-select">
+      <div class="card-user-image-select-pokemon">
         <div class="row">
           <div class="col-md-12 text-center">
             <p class="text-card-title" style="display: inline;">Mis Pokémon</p>
             <button style="display: inline;" type="button" class="edit-pokemon" (click)="editPokemons()">Editar</button>
+          </div>
+        </div>
+        <div class="row row-view-pokemons-data">
+          <div class="col-md-12" *ngFor="let pokemon of lstPokemons; let i = index">
+            <div class="div-view-data-pokemon">
+              <div class="row">
+                <div class="col-md-5" style="text-align: center;">
+                  <img class="img-pokemon-view-data" src="{{pokemon.imgPokemon}}">
+                  <p class="pokemon-name-view-data">{{pokemon.name ? pokemon.name.toUpperCase() : ''}}</p>
+                </div>
+                <div class="col-md-3" style="margin-top: 30px;">
+                  <p class="paragraph-pokemon">HP</p>
+                  <p class="paragraph-pokemon">Ataque</p>
+                  <p class="paragraph-pokemon">Defensa</p>
+                  <p class="paragraph-pokemon">Ataque Especial</p>
+                  <p class="paragraph-pokemon">Defensa Especial</p>
+                  <p class="paragraph-pokemon">Velocidad</p>
+                </div>
+                <div class="col-md-4" style="margin-top: 43px; padding-right: 25px">
+                  <div class="progress progress-bar-view">
+                    <div class="progress-bar" role="progressbar" style="width: {{pokemon['stats'][0]['base_stat']}}%" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <div class="progress progress-bar-view">
+                    <div class="progress-bar" role="progressbar" style="width: {{pokemon['stats'][1]['base_stat']}}%" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <div class="progress progress-bar-view">
+                    <div class="progress-bar" role="progressbar" style="width: {{pokemon['stats'][2]['base_stat']}}%" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <div class="progress progress-bar-view">
+                    <div class="progress-bar" role="progressbar" style="width: {{pokemon['stats'][3]['base_stat']}}%" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <div class="progress progress-bar-view">
+                    <div class="progress-bar" role="progressbar" style="width: {{pokemon['stats'][4]['base_stat']}}%" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <div class="progress progress-bar-view">
+                    <div class="progress-bar" role="progressbar" style="width: {{pokemon['stats'][5]['base_stat']}}%" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -42,6 +42,11 @@ export class MyPokemonsComponent implements OnInit {
         this.user = JSON.parse(res);
       }
     });
+    this.functions.getLocalStorageData('pokemons').then((res: any) => {
+      if (res) {
+        this.lstPokemons = JSON.parse(res);
+      }
+    });
   }
 
 }
