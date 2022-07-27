@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HeaderBarComponent } from './components/header-bar/header-bar.component';
 import { AddProfileComponent } from './add-profile/add-profile.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +16,8 @@ import { AddProfileComponent } from './add-profile/add-profile.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
