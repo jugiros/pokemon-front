@@ -1,4 +1,4 @@
-<app-loading-card *ngIf="viewLoading"></app-loading-card>
+<app-loading-card *ngIf="viewLoading" xmlns="http://www.w3.org/1999/html"></app-loading-card>
 <div class="add-profile-container" *ngIf="!viewLoading">
   <div class="row">
     <div class="col-md-6 text-center">
@@ -10,6 +10,27 @@
   <div class="row row-card-image">
     <div class="col-md-6 d-flex justify-content-center">
       <app-card-data></app-card-data>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center">
+      <div class="card-user-image-select">
+        <p class="text-card-title">Pokémon</p>
+        <p class="add-profile-text">Selecciona 3 Pokémon para que sean parte de tu equipo</p>
+        <input [(ngModel)]="txtSearch" [ngModelOptions]="{standalone: true}" class="form-control input-search"
+               placeholder="Buscar por índice, nombre..." (keyup)="filterLstPokemon()">
+        <div class="row row-view-pokemons">
+          <div class="col-md-4" *ngFor="let pokemon of lstPokemonsFilter; let i = index">
+            <div (click)="addPokemon(pokemon)" class="{{lstPokemonsSelected.includes(pokemon) ? 'div-select-pokemon-select' : 'div-select-pokemon'}}">
+              <img class="img-videw-pokemon" src="{{pokemon['imgPokemon']}}">
+              <p class="txt-name-pokemon">#{{pokemon['id'] ? pokemon['id'].toString().padStart(3, '0') : ''}} {{pokemon['name']}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-continue-btn">
+            <button type="button" class="btn btn-primary" (click)="continue()">Guardar</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -97,6 +97,11 @@
   height: 600px;
 }
 
+.card-user-image-select {
+  width: 80%;
+  height: 600px;
+}
+
 .text-card-title {
   font-family: revert;
   font-style: normal;
@@ -192,4 +197,55 @@
   font-size: 35px;
   line-height: 52px;
   color: #185A7D;
+}
+
+.input-search {
+  font-family: revert !important;
+  font-size: 25px !important;
+  font-weight: bold !important;
+  line-height: 21px !important;
+  color: rgba(0, 0, 0, 0.4) !important;
+  width: 100% !important;
+  height: 36px;
+}
+
+.div-select-pokemon {
+  background: #F2F2F2;
+  border-radius: 20px;
+  height: 110px;
+  margin: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.div-select-pokemon-select {
+  background: #FFC600;
+  border-radius: 20px;
+  height: 110px;
+  margin: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.img-videw-pokemon {
+  width: 85px;
+  height: 95px;
+}
+
+.txt-name-pokemon {
+  background: #01426A;
+  font-size: 12px;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.row-view-pokemons {
+  max-height: 375px;
+  overflow-y: scroll;
+}
+
+.col-continue-btn {
+  text-align: center;
+  margin-top: 44px !important;
 }
